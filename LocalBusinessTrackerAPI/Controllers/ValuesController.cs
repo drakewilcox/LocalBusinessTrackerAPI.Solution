@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LocalBusinessTracker.Controllers
+namespace LocalBusinessTrackerAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

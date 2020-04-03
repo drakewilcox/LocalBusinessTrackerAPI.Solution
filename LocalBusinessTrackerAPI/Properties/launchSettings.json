@@ -4,8 +4,8 @@
     "windowsAuthentication": false, 
     "anonymousAuthentication": true, 
     "iisExpress": {
-      "applicationUrl": "http://localhost:32890",
-      "sslPort": 44380
+      "applicationUrl": "http://localhost:6300",
+      "sslPort": 44343
     }
   },
   "profiles": {
@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "LocalBusinessTracker": {
+    "LocalBusinessTrackerAPI": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",
