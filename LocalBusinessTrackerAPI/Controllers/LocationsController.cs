@@ -17,7 +17,6 @@ namespace LocalBusinessTrackerAPI.Controllers
         {
           _db = db;
         }
-
         // GET api/locations
         [HttpGet]
         public ActionResult<IEnumerable<Location>> Get(string name, string type)
