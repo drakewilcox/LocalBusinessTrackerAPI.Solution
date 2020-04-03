@@ -18,7 +18,7 @@ namespace LocalBusinessTrackerAPI.Controllers
           _db = db;
         }
 
-        // GET api/values
+        // GET api/locations
         [HttpGet]
         public ActionResult<IEnumerable<Location>> Get(string name, string type)
         {
@@ -32,33 +32,39 @@ namespace LocalBusinessTrackerAPI.Controllers
                query = query.Where(location => location.Type == type);
            }
            return query.ToList();
-           
-
         }
 
-        // GET api/values/5
+        // GET api/locations/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<Location> Get(int id)
         {
-            return "value";
+            return _db.Locations.FirstOrDefault(loc => loc.LocationId == id);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Location location)
         {
+            _db.Locations.Add(location);
+            _db.SaveChanges();
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Location location)
         {
+          location.LocationId = id; 
+          _db.Entry(location).State = EntityState.Modified; 
+          _db.SaveChanges();
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+         var locationToDelete = _db.Locations.FirstOrDefault(loc => loc.LocationId == id);
+          _db.Locations.Remove(locationToDelete);
+          _db.SaveChanges(); 
         }
     }
 }
