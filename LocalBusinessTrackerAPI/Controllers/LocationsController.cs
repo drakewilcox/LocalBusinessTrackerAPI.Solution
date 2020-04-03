@@ -20,9 +20,20 @@ namespace LocalBusinessTrackerAPI.Controllers
 
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<Location>> Get(string name, string type)
         {
-            return new string[] { "value1", "value2" };
+           var query = _db.Locations.AsQueryable();
+           if (name != null)
+           {
+               query = query.Where(location => location.Name == name);
+           }
+           if (type != null)
+           {
+               query = query.Where(location => location.Type == type);
+           }
+           return query.ToList();
+           
+
         }
 
         // GET api/values/5
