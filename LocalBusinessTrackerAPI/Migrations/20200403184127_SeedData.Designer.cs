@@ -2,14 +2,16 @@
 using LocalBusinessTrackerAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LocalBusinessTrackerAPI.Migrations
 {
     [DbContext(typeof(LocalBusinessTrackerAPIContext))]
-    partial class LocalBusinessTrackerAPIContextModelSnapshot : ModelSnapshot
+    [Migration("20200403184127_SeedData")]
+    partial class SeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
