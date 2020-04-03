@@ -2,7 +2,7 @@
 
 #### _Epicodus 2020 C#/React Cohort Building an API Friday Project Week 7._
 
-#### By _**Drake Wilcox| 3 APRIL 2020**_
+#### By _**Drake Wilcox | 3 APRIL 2020**_
 
 ## Description
 
@@ -114,6 +114,7 @@ _To view/edit the source code of this application, open the contents of the ``Lo
 * _Entity Framework Core 2.2_
 * _Swashbuckle and ASP.NET CORE
 * _Swagger Middleware_
+* _ASP.NET Core MVC Versioning 3.1.6
 
 ### License
 
